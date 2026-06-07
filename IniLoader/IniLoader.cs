@@ -142,8 +142,12 @@
             if (type == typeof(bool))
                 return bool.Parse(value);
 
+            
             if (type == typeof(double))
-                return double.Parse(value);
+                return double.Parse(value, System.Globalization.CultureInfo.InvariantCulture);
+
+            if (type == typeof(float))
+                return float.Parse(value, System.Globalization.CultureInfo.InvariantCulture);
 
             if (type == typeof(long))
             {
@@ -152,6 +156,17 @@
 
                 return long.Parse(value);
             }
+            if (type == typeof(long))
+            {
+                value = value.Trim();
+
+                if (value.StartsWith("0x", StringComparison.OrdinalIgnoreCase))
+                    return Convert.ToInt64(value, 16);
+
+                return long.Parse(value);
+            }
+            if (type == typeof(double))
+                return double.Parse(value, System.Globalization.CultureInfo.InvariantCulture);
 
             return null;
         }

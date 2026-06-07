@@ -17,6 +17,12 @@ namespace IniLoaderDemo
 
         [IniItem("bit")]
         public bool Bit { get; set; }
+
+        [IniItem("long_number")]
+        public long LongNumber { get; set; }
+
+        [IniItem("real")]
+        public double Real { get; set; }
     }
 
 }

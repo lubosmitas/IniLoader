@@ -1,0 +1,17 @@
+# Build výsledky
+bin/
+obj/
+
+# Visual Studio cache
+.vs/
+*.user
+*.suo
+
+# Logy
+*.log
+
+# Publish
+publish/
+
+# Secrety (configy s hesly)
+appsettings.Development.json
